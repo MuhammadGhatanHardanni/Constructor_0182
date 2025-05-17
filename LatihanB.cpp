@@ -16,6 +16,12 @@ public:
     friend class Petugas; 
 
     friend void lihatStatus(Buku* b, Admin* a);
+
+    void tampilkanInfo() {
+        cout << "Judul Buku : " << judul << endl;
+        cout << "Penulis    : " << penulis << endl;
+        cout << endl;
+    }
 };
 
 class Peminjam {
@@ -30,6 +36,10 @@ public:
     friend class Petugas;
 
     friend void lihatDataPeminjam(Peminjam* p, Admin* a);
+
+    void tampilkanInfo() {
+        cout << "ID Peminjam   : " << id << endl;
+    }
 };
 
 class Petugas {
@@ -46,6 +56,7 @@ public:
             b->dipinjam = true;
             p->totalPinjaman++;
             cout << "Buku berhasil dipinjam oleh: " << p->nama << endl;
+            b->tampilkanInfo();
         } else {
             cout << "Buku sudah dipinjam." << endl;
         }
@@ -56,9 +67,16 @@ public:
             b->dipinjam = false;
             p->totalPinjaman--;
             cout << "Buku berhasil dikembalikan oleh: " << p->nama << endl;
+            b->tampilkanInfo();
         } else {
             cout << "Buku belum dipinjam." << endl;
         }
+    }
+
+    void tampilkanInfo() {
+        cout << "ID Petugas     : " << idPetugas << endl;
+        cout << "Nama Petugas   : " << nama << endl;
+        cout << "Level Akses    : " << levelAkses << endl;
     }
 
     friend class Admin;
@@ -86,6 +104,7 @@ void lihatStatus(Buku* b , Admin* a) {
 }
 
 void lihatDataPeminjam(Peminjam* p, Admin* a) {
+    cout << "ID Peminjam   : " << p->id << endl;
     cout << "Data Peminjam: " << p->nama << endl;
     cout << "Total Pinjaman: " << p->totalPinjaman << endl;
     cout << endl;
@@ -108,6 +127,7 @@ int main() {
     petugas1->prosesKembali(buku2, user2);
 
     admin1->ubahLevelAkses(petugas1, "Luar biasa");
+    petugas1->tampilkanInfo();
 
     return 0;
 }
