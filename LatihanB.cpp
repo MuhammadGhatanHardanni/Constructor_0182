@@ -31,3 +31,10 @@ public:
 
     friend void lihatDataPeminjam(Peminjam* p, Admin* a);
 };
+
+class Petugas {
+private:
+    string nama;
+    int idPetugas;
+    string levelAkses;
+};
