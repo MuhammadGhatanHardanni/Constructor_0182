@@ -90,3 +90,24 @@ void lihatDataPeminjam(Peminjam* p, Admin* a) {
     cout << "Total Pinjaman: " << p->totalPinjaman << endl;
     cout << endl;
 }
+
+int main() {
+    Buku* buku1 = new Buku("Pemrograman Dasar", "Fahrezi");
+    Buku* buku2 = new Buku("Algoritma","Hardanni");
+    Peminjam* user1 = new Peminjam("Ghatan", 182);
+    Peminjam* user2 = new Peminjam("Jehan", 188);
+    Petugas* petugas1 = new Petugas("Tsaqif", 169, "biasa");
+    Admin* admin1 = new Admin();
+
+    petugas1->prosesPinjam(buku1, user1);
+    admin1->lihatStatistik(buku1, user1);
+    petugas1->prosesPinjam(buku2, user2);
+    admin1->lihatStatistik(buku2, user2);
+
+    petugas1->prosesKembali(buku1, user1);
+    petugas1->prosesKembali(buku2, user2);
+
+    admin1->ubahLevelAkses(petugas1, "Luar biasa");
+
+    return 0;
+}
