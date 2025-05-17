@@ -23,4 +23,11 @@ private:
     string nama;
     int id;
     int totalPinjaman;
+
+public:
+    Peminjam(string n, int i) : nama(n), id(i), totalPinjaman(0) {}
+
+    friend class Petugas;
+
+    friend void lihatDataPeminjam(Peminjam* p, Admin* a);
 };
