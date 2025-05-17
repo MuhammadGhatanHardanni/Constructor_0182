@@ -63,3 +63,11 @@ public:
 
     friend class Admin;
 };
+
+class Admin {
+public:
+    void ubahLevelAkses(Petugas* pet, string levelBaru) {
+        pet->levelAkses = levelBaru;
+        cout << "Level akses petugas diubah ke: " << levelBaru << endl;
+    }
+};
