@@ -76,3 +76,11 @@ public:
         lihatDataPeminjam (p, this);
     }
 };
+
+void lihatStatus(Buku* b , Admin* a) {
+    if (b->dipinjam) {
+        cout << "Status buku: Dipinjam" << endl;
+    } else {
+        cout << "Status buku: Tersedia" << endl;
+    }
+}
