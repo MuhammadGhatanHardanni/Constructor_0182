@@ -17,3 +17,10 @@ public:
 
     friend void lihatStatus(Buku* b, Admin* a);
 };
+
+class Peminjam {
+private:
+    string nama;
+    int id;
+    int totalPinjaman;
+};
