@@ -84,3 +84,9 @@ void lihatStatus(Buku* b , Admin* a) {
         cout << "Status buku: Tersedia" << endl;
     }
 }
+
+void lihatDataPeminjam(Peminjam* p, Admin* a) {
+    cout << "Data Peminjam: " << p->nama << endl;
+    cout << "Total Pinjaman: " << p->totalPinjaman << endl;
+    cout << endl;
+}
