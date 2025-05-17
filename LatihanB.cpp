@@ -70,4 +70,9 @@ public:
         pet->levelAkses = levelBaru;
         cout << "Level akses petugas diubah ke: " << levelBaru << endl;
     }
+
+    void lihatStatistik(Buku* b, Peminjam* p) {
+        lihatStatus(b, this);
+        lihatDataPeminjam (p, this);
+    }
 };
